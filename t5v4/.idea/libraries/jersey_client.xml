@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jersey-client">
+    <CLASSES>
+      <root url="jar://E:/useful/jaxrs-ri-2.14/jaxrs-ri/lib/jersey-client.jar!/" />
+      <root url="jar://E:/useful/jaxrs-ri-2.14/jaxrs-ri/lib/jersey-common.jar!/" />
+      <root url="jar://E:/useful/jaxrs-ri-2.14/jaxrs-ri/lib/jersey-container-servlet-core.jar!/" />
+      <root url="jar://E:/useful/jaxrs-ri-2.14/jaxrs-ri/lib/jersey-container-servlet.jar!/" />
+      <root url="jar://E:/useful/jaxrs-ri-2.14/jaxrs-ri/lib/jersey-server.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
