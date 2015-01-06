@@ -21,6 +21,9 @@ public class Project {
     @ManyToOne
     private Lecturer lecturer;
 
+    public Project() {
+    }
+
     public Lecturer getLecturer() {
         return lecturer;
     }
@@ -44,10 +47,6 @@ public class Project {
     public void setStudents(List<Student> students) {
         this.students = students;
     }
-
-    public Project() {
-    }
-
 
     public String getId() {
         return id;

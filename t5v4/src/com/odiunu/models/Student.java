@@ -9,11 +9,6 @@ import java.util.List;
 @Entity
 @Table(name = "STUDENT")
 public class Student {
-    public Student(String name, List<Project> projectPreference) {
-        this.name = name;
-        this.projectPreference = projectPreference;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
@@ -21,6 +16,10 @@ public class Student {
     private String name;
     @OneToMany
     private List<Project> projectPreference;
+    public Student(String name, List<Project> projectPreference) {
+        this.name = name;
+        this.projectPreference = projectPreference;
+    }
 
     public Student() {
     }

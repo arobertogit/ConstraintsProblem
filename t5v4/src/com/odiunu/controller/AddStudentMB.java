@@ -19,11 +19,10 @@ public class AddStudentMB {
 
     @EJB
     private StudentService studentService;
+    private String name;
 
     public AddStudentMB() {
     }
-
-    private String name;
 
     public String getName() {
         return name;

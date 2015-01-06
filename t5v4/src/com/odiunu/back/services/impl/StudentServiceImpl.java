@@ -38,10 +38,6 @@ public class StudentServiceImpl implements StudentService {
         }
     }
 
-    private boolean studentExists(String name) {
-        return entityManager.createQuery("SELECT s FROM Student s WHERE s.name = :name").setParameter("name", name).getResultList().size() > 0;
-    }
-
     @Override
     public void addStudent(Student student) throws EntityExistsException {
         if (student.getId() == null && !studentExists(student.getName())) {
@@ -50,5 +46,9 @@ public class StudentServiceImpl implements StudentService {
             throw new EntityExistsException("Student: name: " + student.getName());
         }
 
+    }
+
+    private boolean studentExists(String name) {
+        return entityManager.createQuery("SELECT s FROM Student s WHERE s.name = :name").setParameter("name", name).getResultList().size() > 0;
     }
 }
