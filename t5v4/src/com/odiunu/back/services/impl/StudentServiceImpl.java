@@ -48,7 +48,8 @@ public class StudentServiceImpl implements StudentService {
 
     }
 
-    private boolean studentExists(String name) {
+    @Override
+    public boolean studentExists(String name) {
         return entityManager.createQuery("SELECT s FROM Student s WHERE s.name = :name").setParameter("name", name).getResultList().size() > 0;
     }
 }

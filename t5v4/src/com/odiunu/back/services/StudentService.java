@@ -13,4 +13,6 @@ public interface StudentService {
     Student getStudent(String name) throws EntityNotFoundException;
 
     void addStudent(Student student) throws EntityExistsException;
+
+    boolean studentExists(String name);
 }

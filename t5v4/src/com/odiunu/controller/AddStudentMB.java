@@ -15,10 +15,11 @@ import javax.faces.bean.ViewScoped;
  */
 @ManagedBean
 @ViewScoped
-public class AddStudentMB {
+public class AddStudentMB implements MBWithMessage {
 
     @EJB
     private StudentService studentService;
+    private String message;
     private String name;
 
     public AddStudentMB() {
@@ -32,9 +33,28 @@ public class AddStudentMB {
         this.name = name;
     }
 
-    public void addStudent() throws EntityExistsException {
-        if (name != null) {
-            studentService.addStudent(new Student(name, Lists.<Project>newArrayList()));
+    public void addStudent() {
+
+        if (name == null || name.trim().isEmpty()) {
+            message = "Insert name";
+        } else if (studentService.studentExists(name)) {
+            message = "Student with name \"" + name + "\" exists";
+        } else {
+            try {
+                studentService.addStudent(new Student(name, Lists.<Project>newArrayList()));
+            } catch (EntityExistsException e) {
+                message = e.getMessage();
+            }
+            message = "Student with name \"" + name + "\" was added";
         }
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

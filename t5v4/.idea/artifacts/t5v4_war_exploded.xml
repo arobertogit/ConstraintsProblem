@@ -12,6 +12,9 @@
           <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
           <element id="library" level="project" name="JPA 2.0-2.0" />
           <element id="library" level="project" name="guava-18.0" />
+          <element id="library" level="project" name="aspectjrt" />
+          <element id="library" level="module" name="JUnit4" module-name="t5v4" />
+          <element id="library" level="project" name="easymock-3.2" />
         </element>
       </element>
     </root>

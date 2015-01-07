@@ -2,15 +2,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-Hello world!
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:form>
     <h:outputLabel value="Add student"/>
     <h:panelGrid columns="2">
         <h:outputLabel value="Name:"/>
-        <h:inputText id="name" value="#{addStudentMB.name}" title="username"/>
+        <h:inputText id="name" value="#{addStudentMB.name}" title="name"/>
+        <h:outputLabel value="Project name:"/>
+        <h:inputText id="projectName" value="#{addStudentMB.projectName}" title="name"/>
     </h:panelGrid>
 
     <h:commandButton action="#{addStudentMB.addStudent()}" value="create"/>
+    <ui:composition template="MessageTemplate.xhtml">
+        <ui:define name="theMessage">
+            #{addStudentMB.message};
+        </ui:define>
+    </ui:composition>
 </h:form>
 </html>
